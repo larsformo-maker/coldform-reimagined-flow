@@ -67,18 +67,14 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				navy: {
-					50: '#f0f4ff',
-					100: '#e0e9ff',
-					500: '#1e3a8a',
-					600: '#1d4ed8',
-					700: '#1e40af',
-					800: '#1e3a8a',
-					900: '#1a202c',
+				// Sales Captain inspired colors
+				green: {
+					400: '#84cc16',
+					500: '#65a30d',
 				},
-				electric: {
-					400: '#3b82f6',
-					500: '#2563eb',
+				gray: {
+					800: '#1f2937',
+					900: '#111827',
 				}
 			},
 			borderRadius: {
