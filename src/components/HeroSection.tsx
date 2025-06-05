@@ -36,12 +36,12 @@ const HeroSection = () => {
             {/* Client logos section */}
             <div className="mb-12">
               <p className="text-gray-400 mb-8 text-lg">We've booked meetings with market-leaders like:</p>
-              <div className="grid grid-cols-3 md:grid-cols-5 gap-6 max-w-3xl opacity-60">
-                {[...Array(5)].map((_, index) => (
-                  <div key={index} className="bg-gray-800 border border-gray-700 h-12 rounded-lg flex items-center justify-center">
-                    <span className="text-gray-500 font-medium text-sm">Logo</span>
-                  </div>
-                ))}
+              <div className="max-w-4xl">
+                <img 
+                  src="/lovable-uploads/6b3e727d-3ad5-4924-b9de-96a1bbacd912.png" 
+                  alt="Company logos including BMW, SalMar, DNB, Scandic, Skogstad, Media Markt, Anton Sport, Famme, and Nymans UR"
+                  className="w-full h-auto opacity-70 hover:opacity-90 transition-opacity"
+                />
               </div>
             </div>
           </div>
