@@ -56,13 +56,13 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="py-16 bg-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="min-h-screen flex items-center justify-center py-16 bg-muted/30">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="text-center mb-12">
-          <h2 className="text-5xl md:text-6xl font-bold text-white mb-4">
+          <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-4">
             BOOK A <span className="text-green-400">CALL</span>
           </h2>
-          <p className="text-2xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-2xl text-muted-foreground max-w-3xl mx-auto">
             Ready to fill your calendar with qualified meetings? Let's discuss how we can help your business grow.
           </p>
         </div>
@@ -70,14 +70,14 @@ const ContactSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <div>
-            <Card className="bg-gray-900 border border-gray-700 shadow-2xl">
+            <Card className="bg-card border border-border shadow-2xl">
               <CardContent className="p-8">
-                <h3 className="text-3xl font-semibold mb-6 text-white">Send us a message</h3>
+                <h3 className="text-3xl font-semibold mb-6 text-foreground">Send us a message</h3>
                 
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="name" className="block text-gray-300 mb-2 text-lg">Your Name *</label>
+                      <label htmlFor="name" className="block text-foreground mb-2 text-lg">Your Name *</label>
                       <Input
                         id="name"
                         name="name"
@@ -85,11 +85,11 @@ const ContactSection = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="bg-gray-800 border-gray-600 text-white placeholder:text-gray-400 text-lg h-12"
+                        className="bg-background border-border text-foreground placeholder:text-muted-foreground text-lg h-12"
                       />
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-gray-300 mb-2 text-lg">Your Email *</label>
+                      <label htmlFor="email" className="block text-foreground mb-2 text-lg">Your Email *</label>
                       <Input
                         id="email"
                         name="email"
@@ -98,25 +98,25 @@ const ContactSection = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="bg-gray-800 border-gray-600 text-white placeholder:text-gray-400 text-lg h-12"
+                        className="bg-background border-border text-foreground placeholder:text-muted-foreground text-lg h-12"
                       />
                     </div>
                   </div>
                   
                   <div>
-                    <label htmlFor="company" className="block text-gray-300 mb-2 text-lg">Company Name</label>
+                    <label htmlFor="company" className="block text-foreground mb-2 text-lg">Company Name</label>
                     <Input
                       id="company"
                       name="company"
                       placeholder="Enter your company name (optional)"
                       value={formData.company}
                       onChange={handleChange}
-                      className="bg-gray-800 border-gray-600 text-white placeholder:text-gray-400 text-lg h-12"
+                      className="bg-background border-border text-foreground placeholder:text-muted-foreground text-lg h-12"
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="message" className="block text-gray-300 mb-2 text-lg">Tell us about your project *</label>
+                    <label htmlFor="message" className="block text-foreground mb-2 text-lg">Tell us about your project *</label>
                     <Textarea
                       id="message"
                       name="message"
@@ -125,7 +125,7 @@ const ContactSection = () => {
                       onChange={handleChange}
                       required
                       rows={5}
-                      className="bg-gray-800 border-gray-600 text-white placeholder:text-gray-400 text-lg"
+                      className="bg-background border-border text-foreground placeholder:text-muted-foreground text-lg"
                     />
                   </div>
                   
@@ -145,8 +145,8 @@ const ContactSection = () => {
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-3xl font-semibold mb-6 text-white">Get in touch</h3>
-              <p className="text-gray-300 text-xl leading-relaxed mb-8">
+              <h3 className="text-3xl font-semibold mb-6 text-foreground">Get in touch</h3>
+              <p className="text-muted-foreground text-xl leading-relaxed mb-8">
                 We're here to help you fill your calendar with qualified meetings. Whether you have specific questions 
                 or want to explore how we can work together, we'd love to hear from you.
               </p>
@@ -154,19 +154,19 @@ const ContactSection = () => {
 
             <div className="space-y-6">
               {contactInfo.map((info, index) => (
-                <div key={index} className="bg-gray-900 border border-gray-700 p-6 rounded-xl hover:border-green-400/50 transition-all duration-300">
+                <div key={index} className="bg-card border border-border p-6 rounded-xl hover:border-green-400/50 transition-all duration-300">
                   <div className="flex items-start space-x-4">
                     <div className="flex items-center justify-center w-12 h-12 bg-green-400/20 text-green-400 rounded-xl">
                       {info.icon}
                     </div>
                     <div>
-                      <h4 className="text-xl font-semibold text-white mb-1">
+                      <h4 className="text-xl font-semibold text-foreground mb-1">
                         {info.title}
                       </h4>
                       <p className="text-green-400 font-medium mb-1 text-lg">
                         {info.content}
                       </p>
-                      <p className="text-gray-300">
+                      <p className="text-muted-foreground">
                         {info.description}
                       </p>
                     </div>

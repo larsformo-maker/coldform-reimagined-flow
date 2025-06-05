@@ -28,20 +28,20 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="process" className="py-16 bg-gray-900 mb-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="process" className="min-h-screen flex items-center justify-center py-16 bg-muted/30">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="text-center mb-12">
-          <h2 className="text-5xl md:text-6xl font-bold text-white mb-4">
+          <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-4">
             OUR <span className="text-green-400">PROCESS</span>
           </h2>
-          <p className="text-2xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-2xl text-muted-foreground max-w-3xl mx-auto">
             A proven 4-step process to fill your calendar with qualified meetings from decision-makers.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {processSteps.map((step, index) => (
-            <Card key={index} className="group hover:shadow-2xl transition-all duration-300 border border-gray-700 bg-gray-800 hover:-translate-y-2">
+            <Card key={index} className="group hover:shadow-2xl transition-all duration-300 border border-border bg-card hover:-translate-y-2">
               <CardContent className="p-6 relative">
                 <div className="flex items-center mb-4">
                   <div className="w-14 h-14 bg-green-400 text-black rounded-xl flex items-center justify-center font-bold text-xl mr-4">
@@ -49,11 +49,11 @@ const ServicesSection = () => {
                   </div>
                 </div>
                 
-                <h4 className="text-xl font-semibold text-white mb-3">
+                <h4 className="text-xl font-semibold text-foreground mb-3">
                   {step.title}
                 </h4>
                 
-                <p className="text-gray-300 leading-relaxed text-lg">
+                <p className="text-muted-foreground leading-relaxed text-lg">
                   {step.description}
                 </p>
 
