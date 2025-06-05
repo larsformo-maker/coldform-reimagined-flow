@@ -107,4 +107,22 @@
   .gradient-text {
     @apply bg-gradient-to-r from-green-400 to-primary bg-clip-text text-transparent;
   }
+
+  .section-break {
+    @apply relative;
+  }
+
+  .section-break::after {
+    content: '';
+    @apply absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-transparent via-green-400 to-transparent;
+  }
+
+  .diagonal-break {
+    @apply relative overflow-hidden;
+  }
+
+  .diagonal-break::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-20 bg-gradient-to-r from-green-400/10 to-green-400/5 transform skew-y-1;
+  }
 }

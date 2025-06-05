@@ -51,7 +51,7 @@ const WorkSection = () => {
   ];
 
   return (
-    <section id="work" className="min-h-screen flex items-center justify-center py-16 bg-background">
+    <section id="work" className="min-h-screen flex items-center justify-center py-16 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="text-center mb-12">
           <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-4">
@@ -148,7 +148,7 @@ const WorkSection = () => {
         </div>
 
         {/* Recent Campaigns Stats */}
-        <div className="bg-gradient-to-r from-card to-muted/50 border border-border rounded-2xl p-10">
+        <div className="bg-card border border-border rounded-2xl p-10">
           <div className="text-center mb-10">
             <h3 className="text-4xl font-bold text-foreground mb-4">RECENT CAMPAIGNS</h3>
             <p className="text-muted-foreground text-xl">Live performance metrics from our active campaigns</p>
