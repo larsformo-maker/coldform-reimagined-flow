@@ -32,18 +32,6 @@ const HeroSection = () => {
                 <ArrowRight className="ml-2 h-6 w-6 group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>
-
-            {/* Client logos section */}
-            <div className="mb-8">
-              <p className="text-gray-400 mb-6 text-xl">We've booked meetings with market-leaders like:</p>
-              <div className="max-w-4xl">
-                <img 
-                  src="/lovable-uploads/6b3e727d-3ad5-4924-b9de-96a1bbacd912.png" 
-                  alt="Company logos including BMW, SalMar, DNB, Scandic, Skogstad, Media Markt, Anton Sport, Famme, and Nymans UR"
-                  className="w-full h-auto opacity-70 hover:opacity-90 transition-opacity"
-                />
-              </div>
-            </div>
           </div>
 
           {/* Right side - Visual elements */}
