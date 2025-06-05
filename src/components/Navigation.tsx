@@ -16,9 +16,9 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
-    { label: 'Services', href: '#services' },
+    { label: 'Process', href: '#process' },
     { label: 'About', href: '#about' },
-    { label: 'Work', href: '#work' },
+    { label: 'Case Studies', href: '#work' },
     { label: 'Contact', href: '#contact' },
   ];
 
@@ -30,7 +30,7 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
             <span className="text-2xl font-playfair font-semibold text-navy-900">
-              Coldform
+              coldform
             </span>
           </div>
 
@@ -47,7 +47,7 @@ const Navigation = () => {
                 </a>
               ))}
               <Button className="ml-4 bg-electric-500 hover:bg-electric-600 text-white">
-                Get Started
+                Book a call
               </Button>
             </div>
           </div>
@@ -79,7 +79,7 @@ const Navigation = () => {
               ))}
               <div className="px-3 py-2">
                 <Button className="w-full bg-electric-500 hover:bg-electric-600 text-white">
-                  Get Started
+                  Book a call
                 </Button>
               </div>
             </div>

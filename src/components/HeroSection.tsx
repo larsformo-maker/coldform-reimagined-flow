@@ -1,5 +1,5 @@
 
-import { ArrowRight, Play } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const HeroSection = () => {
@@ -14,44 +14,30 @@ const HeroSection = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-in">
           <h1 className="text-5xl md:text-7xl font-playfair font-semibold text-navy-900 mb-6 leading-tight">
-            Digital Excellence
-            <span className="block gradient-text">Reimagined</span>
+            Only pay for meetings
+            <span className="block gradient-text">that matter</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-navy-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-            We craft exceptional digital experiences that transform brands and drive measurable results. 
-            From strategy to execution, we're your partners in digital innovation.
+            No retainers, no massive setup fees. Only pay for qualified meetings with decision-makers ready to talk.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
             <Button size="lg" className="bg-electric-500 hover:bg-electric-600 text-white px-8 py-3 text-lg group">
-              Start Your Project
+              Book a call
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            
-            <Button variant="outline" size="lg" className="border-navy-300 text-navy-700 hover:bg-navy-50 px-8 py-3 text-lg group">
-              <Play className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-              Watch Our Story
             </Button>
           </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-2xl mx-auto">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-navy-900 mb-2">200+</div>
-              <div className="text-navy-600">Projects Delivered</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-navy-900 mb-2">98%</div>
-              <div className="text-navy-600">Client Satisfaction</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-navy-900 mb-2">5+</div>
-              <div className="text-navy-600">Years Experience</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-navy-900 mb-2">24/7</div>
-              <div className="text-navy-600">Support Available</div>
+          {/* Client logos section */}
+          <div className="mb-12">
+            <p className="text-navy-600 mb-8 text-lg">We've booked meetings with market-leaders like:</p>
+            <div className="grid grid-cols-3 md:grid-cols-9 gap-8 max-w-4xl mx-auto opacity-60">
+              {[...Array(9)].map((_, index) => (
+                <div key={index} className="bg-navy-200 h-12 rounded-lg flex items-center justify-center">
+                  <span className="text-navy-400 font-medium text-sm">Logo</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>

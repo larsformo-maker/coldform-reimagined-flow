@@ -1,45 +1,52 @@
-import { ExternalLink, Github } from 'lucide-react';
+import { Calendar, TrendingUp, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 
 const WorkSection = () => {
-  const projects = [
+  const caseStudies = [
     {
       id: 1,
-      title: "FinTech Dashboard",
-      category: "Web Application",
-      description: "A comprehensive financial dashboard with real-time analytics and intuitive user experience.",
-      image: "https://images.unsplash.com/photo-1551038247-3d9af20df552?w=800&h=600&fit=crop",
-      tags: ["React", "TypeScript", "D3.js", "Node.js"],
+      title: "SaaS Startup - 47 Qualified Meetings",
+      category: "Technology",
+      description: "Helped a B2B SaaS startup book 47 qualified meetings with enterprise decision-makers in 3 months.",
+      metrics: {
+        meetings: "47",
+        timeline: "3 months",
+        conversionRate: "12%"
+      },
       featured: true
     },
     {
       id: 2,
-      title: "E-commerce Platform",
-      category: "Full-Stack Development",
-      description: "Modern e-commerce solution with seamless checkout and inventory management.",
-      image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=800&h=600&fit=crop",
-      tags: ["Next.js", "Stripe", "PostgreSQL", "Tailwind"],
+      title: "Marketing Agency - €85k Revenue",
+      category: "Agency",
+      description: "Generated €85k in new revenue for a digital marketing agency through targeted outreach.",
+      metrics: {
+        revenue: "€85k",
+        timeline: "4 months", 
+        meetingRate: "8.3%"
+      },
       featured: false
     },
     {
       id: 3,
-      title: "Mobile Banking App",
-      category: "Mobile Application",
-      description: "Secure and user-friendly mobile banking application with biometric authentication.",
-      image: "https://images.unsplash.com/photo-1493397212122-2b85dda8106b?w=800&h=600&fit=crop",
-      tags: ["React Native", "Firebase", "OAuth", "Push Notifications"],
-      featured: false
-    },
-    {
-      id: 4,
-      title: "Brand Identity System",
-      category: "Design & Branding",
-      description: "Complete brand identity redesign for a sustainable technology company.",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop",
-      tags: ["Brand Design", "Logo", "Guidelines", "Print Design"],
+      title: "Consulting Firm - 32 Enterprise Meetings",
+      category: "Consulting",
+      description: "Booked 32 high-value meetings with Fortune 500 companies for a management consulting firm.",
+      metrics: {
+        meetings: "32",
+        timeline: "2 months",
+        avgDealSize: "€45k"
+      },
       featured: false
     }
+  ];
+
+  const recentCampaigns = [
+    { metric: "156", label: "Meetings Booked", period: "This Month" },
+    { metric: "23%", label: "Response Rate", period: "Average" },
+    { metric: "€2.3M", label: "Revenue Generated", period: "For Clients" },
+    { metric: "94%", label: "Show-up Rate", period: "Qualified Meetings" }
   ];
 
   return (
@@ -47,115 +54,124 @@ const WorkSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-playfair font-semibold text-navy-900 mb-4">
-            Featured <span className="gradient-text">Work</span>
+            Case <span className="gradient-text">Studies</span>
           </h2>
           <p className="text-xl text-navy-600 max-w-3xl mx-auto">
-            Explore our portfolio of successful projects that showcase our expertise across various industries and technologies.
+            Real results from real clients. See how we've helped businesses fill their calendars with qualified meetings.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-          {/* Featured Project */}
-          {projects.filter(project => project.featured).map((project) => (
-            <div key={project.id} className="lg:col-span-2">
-              <Card className="group overflow-hidden hover:shadow-2xl transition-all duration-500 border-0 shadow-lg">
-                <div className="grid grid-cols-1 lg:grid-cols-2">
-                  <div className="relative overflow-hidden">
-                    <img 
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-80 lg:h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-navy-900/20 group-hover:bg-navy-900/10 transition-colors duration-300"></div>
+        {/* Featured Case Study */}
+        <div className="mb-16">
+          {caseStudies.filter(study => study.featured).map((study) => (
+            <Card key={study.id} className="overflow-hidden hover:shadow-2xl transition-all duration-500 border-0 shadow-lg">
+              <div className="grid grid-cols-1 lg:grid-cols-2">
+                <div className="bg-gradient-to-br from-electric-500 to-navy-600 p-12 text-white flex flex-col justify-center">
+                  <div className="text-electric-200 font-medium mb-2">{study.category}</div>
+                  <h3 className="text-3xl font-playfair font-semibold mb-4">
+                    {study.title}
+                  </h3>
+                  <p className="text-lg mb-8 opacity-90">
+                    {study.description}
+                  </p>
+                  
+                  <div className="grid grid-cols-3 gap-6">
+                    <div>
+                      <div className="text-3xl font-bold">{study.metrics.meetings}</div>
+                      <div className="text-sm opacity-80">Meetings</div>
+                    </div>
+                    <div>
+                      <div className="text-3xl font-bold">{study.metrics.timeline}</div>
+                      <div className="text-sm opacity-80">Timeline</div>
+                    </div>
+                    <div>
+                      <div className="text-3xl font-bold">{study.metrics.conversionRate}</div>
+                      <div className="text-sm opacity-80">Conversion</div>
+                    </div>
+                  </div>
+                </div>
+                
+                <CardContent className="p-12 flex flex-col justify-center bg-navy-50">
+                  <div className="space-y-6">
+                    <div className="flex items-center space-x-4">
+                      <Calendar className="h-6 w-6 text-electric-500" />
+                      <span className="text-navy-700">Qualified meetings booked directly into calendar</span>
+                    </div>
+                    <div className="flex items-center space-x-4">
+                      <Users className="h-6 w-6 text-electric-500" />
+                      <span className="text-navy-700">Decision-makers only - no gatekeepers</span>
+                    </div>
+                    <div className="flex items-center space-x-4">
+                      <TrendingUp className="h-6 w-6 text-electric-500" />
+                      <span className="text-navy-700">Performance-based pricing model</span>
+                    </div>
                   </div>
                   
-                  <CardContent className="p-8 lg:p-12 flex flex-col justify-center">
-                    <div className="text-electric-500 font-medium mb-2">{project.category}</div>
-                    <h3 className="text-3xl font-playfair font-semibold text-navy-900 mb-4">
-                      {project.title}
-                    </h3>
-                    <p className="text-navy-600 mb-6 leading-relaxed text-lg">
-                      {project.description}
-                    </p>
-                    
-                    <div className="flex flex-wrap gap-2 mb-8">
-                      {project.tags.map((tag, tagIndex) => (
-                        <span 
-                          key={tagIndex}
-                          className="px-3 py-1 bg-navy-100 text-navy-700 rounded-full text-sm font-medium"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-
-                    <div className="flex gap-4">
-                      <Button size="lg" className="bg-electric-500 hover:bg-electric-600 text-white">
-                        <ExternalLink className="mr-2 h-4 w-4" />
-                        View Live
-                      </Button>
-                      <Button variant="outline" size="lg" className="border-navy-300 text-navy-700 hover:bg-navy-50">
-                        <Github className="mr-2 h-4 w-4" />
-                        View Code
-                      </Button>
-                    </div>
-                  </CardContent>
-                </div>
-              </Card>
-            </div>
+                  <Button className="mt-8 bg-electric-500 hover:bg-electric-600 text-white">
+                    Book a similar campaign
+                  </Button>
+                </CardContent>
+              </div>
+            </Card>
           ))}
         </div>
 
-        {/* Other Projects */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.filter(project => !project.featured).map((project) => (
-            <Card key={project.id} className="group overflow-hidden hover:shadow-xl transition-all duration-300 border-0 shadow-md hover:-translate-y-2">
-              <div className="relative overflow-hidden">
-                <img 
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-navy-900/20 group-hover:bg-navy-900/10 transition-colors duration-300"></div>
-              </div>
-              
-              <CardContent className="p-6">
-                <div className="text-electric-500 font-medium mb-2 text-sm">{project.category}</div>
+        {/* Other Case Studies */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          {caseStudies.filter(study => !study.featured).map((study) => (
+            <Card key={study.id} className="group overflow-hidden hover:shadow-xl transition-all duration-300 border-0 shadow-md hover:-translate-y-2">
+              <CardContent className="p-8">
+                <div className="text-electric-500 font-medium mb-2 text-sm">{study.category}</div>
                 <h3 className="text-xl font-semibold text-navy-900 mb-3">
-                  {project.title}
+                  {study.title}
                 </h3>
-                <p className="text-navy-600 mb-4 text-sm leading-relaxed">
-                  {project.description}
+                <p className="text-navy-600 mb-6 leading-relaxed">
+                  {study.description}
                 </p>
                 
-                <div className="flex flex-wrap gap-1 mb-4">
-                  {project.tags.slice(0, 3).map((tag, tagIndex) => (
-                    <span 
-                      key={tagIndex}
-                      className="px-2 py-1 bg-navy-100 text-navy-700 rounded text-xs"
-                    >
-                      {tag}
-                    </span>
+                <div className="grid grid-cols-3 gap-4 mb-6">
+                  {Object.entries(study.metrics).map(([key, value], index) => (
+                    <div key={index} className="text-center">
+                      <div className="text-2xl font-bold text-navy-900">{value}</div>
+                      <div className="text-xs text-navy-500 capitalize">{key.replace(/([A-Z])/g, ' $1')}</div>
+                    </div>
                   ))}
                 </div>
 
-                <div className="flex gap-2">
-                  <Button size="sm" className="flex-1 bg-electric-500 hover:bg-electric-600 text-white">
-                    <ExternalLink className="mr-1 h-3 w-3" />
-                    View
-                  </Button>
-                  <Button variant="outline" size="sm" className="border-navy-300 text-navy-700">
-                    <Github className="h-3 w-3" />
-                  </Button>
-                </div>
+                <Button size="sm" className="w-full bg-electric-500 hover:bg-electric-600 text-white">
+                  View Case Study
+                </Button>
               </CardContent>
             </Card>
           ))}
         </div>
 
+        {/* Recent Campaigns Stats */}
+        <div className="bg-gradient-to-r from-navy-900 to-navy-800 rounded-2xl p-12 text-white">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-playfair font-semibold mb-4">Recent Campaigns</h3>
+            <p className="text-navy-300 text-lg">Live performance metrics from our active campaigns</p>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {recentCampaigns.map((campaign, index) => (
+              <div key={index} className="text-center">
+                <div className="text-4xl md:text-5xl font-bold text-electric-400 mb-2">
+                  {campaign.metric}
+                </div>
+                <div className="text-lg font-medium mb-1">{campaign.label}</div>
+                <div className="text-navy-400 text-sm">{campaign.period}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
         <div className="text-center mt-12">
-          <Button size="lg" variant="outline" className="border-navy-300 text-navy-700 hover:bg-navy-50">
-            View All Projects
+          <h3 className="text-2xl font-semibold text-navy-900 mb-4">
+            Ready to fill your calendar?
+          </h3>
+          <Button size="lg" className="bg-electric-500 hover:bg-electric-600 text-white">
+            Book a call
           </Button>
         </div>
       </div>

@@ -1,34 +1,31 @@
 
-import { Facebook, Twitter, Instagram, Linkedin, Github } from 'lucide-react';
+import { Mail, Phone, Linkedin } from 'lucide-react';
 
 const Footer = () => {
   const footerLinks = {
     services: [
-      { label: 'Web Development', href: '#' },
-      { label: 'Mobile Apps', href: '#' },
-      { label: 'Brand Design', href: '#' },
-      { label: 'Digital Marketing', href: '#' },
+      { label: 'Lead Generation', href: '#' },
+      { label: 'Outbound Campaigns', href: '#' },
+      { label: 'Meeting Booking', href: '#' },
+      { label: 'Performance Marketing', href: '#' },
     ],
     company: [
-      { label: 'About Us', href: '#about' },
-      { label: 'Our Work', href: '#work' },
-      { label: 'Careers', href: '#' },
+      { label: 'About Lars', href: '#about' },
+      { label: 'Case Studies', href: '#work' },
+      { label: 'Process', href: '#process' },
       { label: 'Contact', href: '#contact' },
     ],
     resources: [
       { label: 'Blog', href: '#' },
-      { label: 'Case Studies', href: '#' },
-      { label: 'Documentation', href: '#' },
-      { label: 'Support', href: '#' },
+      { label: 'Success Stories', href: '#' },
+      { label: 'Lead Gen Tips', href: '#' },
+      { label: 'Book a Call', href: '#' },
     ],
   };
 
   const socialLinks = [
-    { icon: <Facebook className="h-5 w-5" />, href: '#', label: 'Facebook' },
-    { icon: <Twitter className="h-5 w-5" />, href: '#', label: 'Twitter' },
-    { icon: <Instagram className="h-5 w-5" />, href: '#', label: 'Instagram' },
+    { icon: <Mail className="h-5 w-5" />, href: 'mailto:lars@coldform.agency', label: 'Email' },
     { icon: <Linkedin className="h-5 w-5" />, href: '#', label: 'LinkedIn' },
-    { icon: <Github className="h-5 w-5" />, href: '#', label: 'GitHub' },
   ];
 
   return (
@@ -38,11 +35,10 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <div className="mb-6">
-              <span className="text-3xl font-playfair font-semibold">Coldform</span>
+              <span className="text-3xl font-playfair font-semibold">coldform</span>
             </div>
             <p className="text-navy-300 mb-6 leading-relaxed max-w-md">
-              We craft exceptional digital experiences that transform brands and drive results. 
-              Your success is our passion.
+              Performance-based lead generation. Only pay for qualified meetings with decision-makers ready to talk.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
@@ -114,7 +110,7 @@ const Footer = () => {
         <div className="border-t border-navy-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-navy-400 text-sm mb-4 md:mb-0">
-              © 2025 Coldform Agency. All rights reserved.
+              © 2025 coldform. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm">
               <a href="#" className="text-navy-400 hover:text-electric-400 transition-colors duration-200">
@@ -122,9 +118,6 @@ const Footer = () => {
               </a>
               <a href="#" className="text-navy-400 hover:text-electric-400 transition-colors duration-200">
                 Terms of Service
-              </a>
-              <a href="#" className="text-navy-400 hover:text-electric-400 transition-colors duration-200">
-                Cookie Policy
               </a>
             </div>
           </div>
