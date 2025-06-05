@@ -5,45 +5,45 @@ import { Button } from '@/components/ui/button';
 const AboutSection = () => {
   const whyChooseUs = [
     {
-      icon: <Target className="h-8 w-8" />,
+      icon: <Target className="h-10 w-10" />,
       title: "Performance-Based",
       description: "Only pay for actual qualified meetings booked. No retainers or setup fees."
     },
     {
-      icon: <Users className="h-8 w-8" />,
+      icon: <Users className="h-10 w-10" />,
       title: "Decision-Makers Only", 
       description: "We target and book meetings with actual decision-makers ready to talk."
     },
     {
-      icon: <TrendingUp className="h-8 w-8" />,
+      icon: <TrendingUp className="h-10 w-10" />,
       title: "Proven Results",
       description: "Track record of scaling agencies from €0 to €100k+ monthly revenue."
     }
   ];
 
   return (
-    <section id="about" className="py-20 bg-black">
+    <section id="about" className="py-16 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Why Coldform Section */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+        <div className="text-center mb-12">
+          <h2 className="text-5xl md:text-6xl font-bold text-white mb-4">
             WHY <span className="text-green-400">COLDFORM?</span>
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
           {whyChooseUs.map((item, index) => (
             <div 
               key={index} 
-              className="bg-gray-900 border border-gray-700 p-8 rounded-2xl hover:border-green-400/50 transition-all duration-300 text-center group"
+              className="bg-gray-900 border border-gray-700 p-6 rounded-2xl hover:border-green-400/50 transition-all duration-300 text-center group"
             >
-              <div className="flex items-center justify-center w-16 h-16 bg-green-400/10 text-green-400 rounded-2xl mb-6 mx-auto group-hover:bg-green-400/20 transition-colors">
+              <div className="flex items-center justify-center w-20 h-20 bg-green-400/10 text-green-400 rounded-2xl mb-4 mx-auto group-hover:bg-green-400/20 transition-colors">
                 {item.icon}
               </div>
-              <h3 className="text-xl font-semibold text-white mb-4">
+              <h3 className="text-2xl font-semibold text-white mb-3">
                 {item.title}
               </h3>
-              <p className="text-gray-300 leading-relaxed">
+              <p className="text-gray-300 leading-relaxed text-lg">
                 {item.description}
               </p>
             </div>
@@ -51,13 +51,13 @@ const AboutSection = () => {
         </div>
 
         {/* About Lars Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="text-5xl md:text-6xl font-bold text-white mb-4">
               ABOUT <span className="text-green-400">COLDFORM</span>
             </h2>
             
-            <div className="space-y-6 text-lg text-gray-300 leading-relaxed">
+            <div className="space-y-4 text-xl text-gray-300 leading-relaxed">
               <p>
                 <strong className="text-white">Hey! I'm Lars</strong>, the founder & owner of coldform.
               </p>
@@ -83,8 +83,8 @@ const AboutSection = () => {
               </p>
             </div>
 
-            <div className="mt-8">
-              <Button size="lg" className="bg-green-400 hover:bg-green-500 text-black font-semibold px-8 py-4 rounded-full">
+            <div className="mt-6">
+              <Button size="lg" className="bg-green-400 hover:bg-green-500 text-black font-semibold px-10 py-5 text-xl rounded-full">
                 Book a call with Lars
               </Button>
             </div>
@@ -94,12 +94,12 @@ const AboutSection = () => {
             <div className="bg-gradient-to-br from-green-400 to-green-500 p-8 rounded-2xl text-black relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-black/10 rounded-full -mr-16 -mt-16"></div>
               <div className="relative z-10">
-                <div className="text-6xl mb-4">👋</div>
-                <h3 className="text-2xl font-bold mb-4">Ready to get started?</h3>
-                <p className="text-lg mb-6 opacity-90">
+                <div className="text-7xl mb-4">👋</div>
+                <h3 className="text-3xl font-bold mb-4">Ready to get started?</h3>
+                <p className="text-xl mb-6 opacity-90">
                   Let's chat about how we can fill your calendar with qualified meetings.
                 </p>
-                <div className="text-sm font-semibold">
+                <div className="text-lg font-semibold">
                   - Lars, Founder of Coldform
                 </div>
               </div>

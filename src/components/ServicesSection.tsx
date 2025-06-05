@@ -28,38 +28,38 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="process" className="py-20 bg-gray-900">
+    <section id="process" className="py-16 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+        <div className="text-center mb-12">
+          <h2 className="text-5xl md:text-6xl font-bold text-white mb-4">
             OUR <span className="text-green-400">PROCESS</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-2xl text-gray-300 max-w-3xl mx-auto">
             A proven 4-step process to fill your calendar with qualified meetings from decision-makers.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {processSteps.map((step, index) => (
             <Card key={index} className="group hover:shadow-2xl transition-all duration-300 border border-gray-700 bg-gray-800 hover:-translate-y-2">
-              <CardContent className="p-8 relative">
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-green-400 text-black rounded-xl flex items-center justify-center font-bold text-lg mr-4">
+              <CardContent className="p-6 relative">
+                <div className="flex items-center mb-4">
+                  <div className="w-14 h-14 bg-green-400 text-black rounded-xl flex items-center justify-center font-bold text-xl mr-4">
                     {step.step}
                   </div>
                 </div>
                 
-                <h4 className="text-lg font-semibold text-white mb-3">
+                <h4 className="text-xl font-semibold text-white mb-3">
                   {step.title}
                 </h4>
                 
-                <p className="text-gray-300 leading-relaxed">
+                <p className="text-gray-300 leading-relaxed text-lg">
                   {step.description}
                 </p>
 
                 {/* Step connector line */}
                 {index < processSteps.length - 1 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-green-400/30"></div>
+                  <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-0.5 bg-green-400/30"></div>
                 )}
               </CardContent>
             </Card>
@@ -67,7 +67,7 @@ const ServicesSection = () => {
         </div>
 
         <div className="text-center">
-          <Button size="lg" className="bg-green-400 hover:bg-green-500 text-black font-semibold px-8 py-4 rounded-full">
+          <Button size="lg" className="bg-green-400 hover:bg-green-500 text-black font-semibold px-10 py-5 text-xl rounded-full">
             Get Started
           </Button>
         </div>
