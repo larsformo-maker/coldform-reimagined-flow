@@ -170,9 +170,6 @@ const WorkSection = () => {
           <h3 className="text-3xl font-semibold text-white mb-4">
             Ready to fill your calendar?
           </h3>
-          <Button size="lg" className="bg-green-400 hover:bg-green-500 text-black font-semibold px-10 py-5 text-xl rounded-full">
-            Get Started
-          </Button>
         </div>
       </div>
     </section>
