@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Mail, Phone, MapPin, Send, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -56,8 +55,11 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="min-h-screen flex items-center justify-center py-16 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+    <section id="contact" className="min-h-screen flex items-center justify-center py-16 relative">
+      {/* Gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-t from-slate-100/60 via-blue-50/40 to-slate-50/60 dark:from-slate-900/60 dark:via-blue-950/30 dark:to-slate-800/60"></div>
+      
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="text-center mb-12">
           <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-4">
             BOOK A <span className="text-green-400">CALL</span>

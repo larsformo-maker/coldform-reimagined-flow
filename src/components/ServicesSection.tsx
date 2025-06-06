@@ -1,4 +1,3 @@
-
 import { Users, Target, TrendingUp, Calendar } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -28,8 +27,11 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="process" className="min-h-screen flex items-center justify-center py-16 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+    <section id="process" className="min-h-screen flex items-center justify-center py-16 relative">
+      {/* Subtle gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-50/50 via-blue-50/30 to-slate-100/50 dark:from-slate-800/50 dark:via-blue-900/20 dark:to-slate-900/50"></div>
+      
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="text-center mb-16">
           <h2 className="text-6xl md:text-7xl font-bold text-foreground mb-6 animate-fade-in">
             OUR <span className="text-green-400">PROCESS</span>

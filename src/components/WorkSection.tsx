@@ -1,4 +1,3 @@
-
 import { Calendar, TrendingUp, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -51,8 +50,11 @@ const WorkSection = () => {
   ];
 
   return (
-    <section id="work" className="min-h-screen flex items-center justify-center py-16 bg-muted/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+    <section id="work" className="min-h-screen flex items-center justify-center py-16 relative">
+      {/* Enhanced gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/40 via-slate-50/60 to-blue-100/40 dark:from-blue-950/30 dark:via-slate-900/50 dark:to-blue-900/30"></div>
+      
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="text-center mb-12">
           <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-4">
             CASE <span className="text-green-400">STUDIES</span>
