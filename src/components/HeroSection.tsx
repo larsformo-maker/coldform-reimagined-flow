@@ -1,3 +1,4 @@
+
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -14,17 +15,17 @@ const HeroSection = () => {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-gradient-to-r from-green-400/5 via-blue-400/5 to-transparent rounded-full blur-3xl"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Content */}
           <div className="animate-fade-in">
-            <h1 className="text-6xl md:text-8xl font-bold text-foreground mb-4 leading-tight">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
               ONLY PAY FOR
               <span className="block text-green-400">MEETINGS</span>
               <span className="block text-foreground">THAT MATTER</span>
             </h1>
             
-            <p className="text-2xl md:text-3xl text-muted-foreground mb-6 max-w-2xl leading-relaxed">
+            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl leading-relaxed">
               No retainers, no massive setup fees. Only pay for qualified meetings with decision-makers ready to talk.
             </p>
 
