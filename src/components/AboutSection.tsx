@@ -1,8 +1,25 @@
 
 import { Award, Users, Target, TrendingUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useLocation } from 'react-router-dom';
 
 const AboutSection = () => {
+  const location = useLocation();
+
+  const handleBookCall = () => {
+    // If we're not on the home page, go to home page with contact section
+    if (location.pathname !== '/') {
+      window.location.href = '/#contact';
+      return;
+    }
+    
+    // If we're on the home page, smooth scroll to contact
+    const element = document.querySelector('#contact');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const whyChooseUs = [
     {
       icon: <Target className="h-10 w-10" />,
@@ -22,11 +39,11 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className="py-16 bg-black">
+    <section id="about" className="py-16 bg-gradient-to-br from-slate-100 via-blue-50/80 to-slate-50 dark:from-slate-900 dark:via-blue-950/50 dark:to-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Why Coldform Section */}
         <div className="text-center mb-12">
-          <h2 className="text-5xl md:text-6xl font-bold text-white mb-4">
+          <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-4">
             WHY <span className="text-green-400">COLDFORM?</span>
           </h2>
         </div>
@@ -35,15 +52,15 @@ const AboutSection = () => {
           {whyChooseUs.map((item, index) => (
             <div 
               key={index} 
-              className="bg-gray-900 border border-gray-700 p-6 rounded-2xl hover:border-green-400/50 transition-all duration-300 text-center group"
+              className="bg-card border border-border p-6 rounded-2xl hover:border-green-400/50 transition-all duration-300 text-center group shadow-lg"
             >
               <div className="flex items-center justify-center w-20 h-20 bg-green-400/10 text-green-400 rounded-2xl mb-4 mx-auto group-hover:bg-green-400/20 transition-colors">
                 {item.icon}
               </div>
-              <h3 className="text-2xl font-semibold text-white mb-3">
+              <h3 className="text-2xl font-semibold text-foreground mb-3">
                 {item.title}
               </h3>
-              <p className="text-gray-300 leading-relaxed text-lg">
+              <p className="text-muted-foreground leading-relaxed text-lg">
                 {item.description}
               </p>
             </div>
@@ -53,13 +70,13 @@ const AboutSection = () => {
         {/* About Lars Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-5xl md:text-6xl font-bold text-white mb-4">
-              ABOUT <span className="text-green-400">COLDFORM</span>
+            <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-4">
+              ABOUT <span className="text-green-400">LARS</span>
             </h2>
             
-            <div className="space-y-4 text-xl text-gray-300 leading-relaxed">
+            <div className="space-y-4 text-xl text-muted-foreground leading-relaxed">
               <p>
-                <strong className="text-white">Hey! I'm Lars</strong>, the founder & owner of coldform.
+                <strong className="text-foreground">Hey! I'm Lars</strong>, the founder & owner of coldform.
               </p>
               
               <p>
@@ -84,7 +101,11 @@ const AboutSection = () => {
             </div>
 
             <div className="mt-6">
-              <Button size="lg" className="bg-green-400 hover:bg-green-500 text-black font-semibold px-10 py-5 text-xl rounded-full">
+              <Button 
+                size="lg" 
+                onClick={handleBookCall}
+                className="bg-green-400 hover:bg-green-500 text-black font-semibold px-10 py-5 text-xl rounded-full"
+              >
                 Book a call with Lars
               </Button>
             </div>

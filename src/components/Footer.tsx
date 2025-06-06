@@ -1,24 +1,43 @@
 
 import { Mail, Phone, Linkedin, Twitter, Instagram, Youtube } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 
 const Footer = () => {
+  const location = useLocation();
+
+  const handleSmoothScroll = (href: string) => {
+    // If we're not on the home page and trying to access a section, go to home first
+    if (location.pathname !== '/' && href.startsWith('#')) {
+      window.location.href = '/' + href;
+      return;
+    }
+    
+    // If we're on the home page, smooth scroll to section
+    if (href.startsWith('#')) {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   const footerLinks = {
     services: [
-      { label: 'Lead Generation', href: '#' },
-      { label: 'Outbound Campaigns', href: '#' },
-      { label: 'Meeting Booking', href: '#' },
-      { label: 'Performance Marketing', href: '#' },
+      { label: 'Lead Generation', href: '#process' },
+      { label: 'Outbound Campaigns', href: '#process' },
+      { label: 'Meeting Booking', href: '#process' },
+      { label: 'Performance Marketing', href: '#process' },
     ],
     company: [
-      { label: 'About Lars', href: '#about' },
+      { label: 'About Lars', href: '/about' },
       { label: 'Our Process', href: '#process' },
       { label: 'Case Studies', href: '#work' },
       { label: 'Contact', href: '#contact' },
     ],
     resources: [
       { label: 'Blog', href: '#' },
-      { label: 'Success Stories', href: '#' },
-      { label: 'Lead Gen Tips', href: '#' },
+      { label: 'Success Stories', href: '#work' },
+      { label: 'Lead Gen Tips', href: '#process' },
       { label: 'Book a Call', href: '#contact' },
     ],
   };
@@ -37,7 +56,7 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <div className="mb-6">
-              <span className="text-4xl font-bold">coldform</span>
+              <Link to="/" className="text-4xl font-bold">coldform</Link>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed max-w-md text-lg">
               Performance-based lead generation. Only pay for qualified meetings with decision-makers ready to talk business.
@@ -78,12 +97,21 @@ const Footer = () => {
             <ul className="space-y-4">
               {footerLinks.services.map((link, index) => (
                 <li key={index}>
-                  <a
-                    href={link.href}
-                    className="text-gray-300 hover:text-green-400 transition-colors duration-200 text-lg"
-                  >
-                    {link.label}
-                  </a>
+                  {link.href.startsWith('#') ? (
+                    <button
+                      onClick={() => handleSmoothScroll(link.href)}
+                      className="text-gray-300 hover:text-green-400 transition-colors duration-200 text-lg text-left"
+                    >
+                      {link.label}
+                    </button>
+                  ) : (
+                    <Link
+                      to={link.href}
+                      className="text-gray-300 hover:text-green-400 transition-colors duration-200 text-lg"
+                    >
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -95,12 +123,21 @@ const Footer = () => {
             <ul className="space-y-4">
               {footerLinks.company.map((link, index) => (
                 <li key={index}>
-                  <a
-                    href={link.href}
-                    className="text-gray-300 hover:text-green-400 transition-colors duration-200 text-lg"
-                  >
-                    {link.label}
-                  </a>
+                  {link.href.startsWith('#') ? (
+                    <button
+                      onClick={() => handleSmoothScroll(link.href)}
+                      className="text-gray-300 hover:text-green-400 transition-colors duration-200 text-lg text-left"
+                    >
+                      {link.label}
+                    </button>
+                  ) : (
+                    <Link
+                      to={link.href}
+                      className="text-gray-300 hover:text-green-400 transition-colors duration-200 text-lg"
+                    >
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -112,12 +149,21 @@ const Footer = () => {
             <ul className="space-y-4">
               {footerLinks.resources.map((link, index) => (
                 <li key={index}>
-                  <a
-                    href={link.href}
-                    className="text-gray-300 hover:text-green-400 transition-colors duration-200 text-lg"
-                  >
-                    {link.label}
-                  </a>
+                  {link.href.startsWith('#') ? (
+                    <button
+                      onClick={() => handleSmoothScroll(link.href)}
+                      className="text-gray-300 hover:text-green-400 transition-colors duration-200 text-lg text-left"
+                    >
+                      {link.label}
+                    </button>
+                  ) : (
+                    <Link
+                      to={link.href}
+                      className="text-gray-300 hover:text-green-400 transition-colors duration-200 text-lg"
+                    >
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
